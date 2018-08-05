@@ -1,0 +1,25 @@
+{
+  "name": "niccolo-pokedex",
+  "version": "1.0.0",
+  "description": "herexamen cmp5 pokedex",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Montini7/pokedex.git"
+  },
+  "keywords": [
+    "pokedex",
+    "pokemon",
+    "exam",
+    "cmp"
+  ],
+  "author": "niccolo montini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Montini7/pokedex/issues"
+  },
+  "homepage": "https://github.com/Montini7/pokedex#readme"
+}
