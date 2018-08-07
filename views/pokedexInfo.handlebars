@@ -1,17 +1,36 @@
 {{#if err}}
   <h1>Oh noes!: {{err}} </h1>
 {{else}}
-<strong>Name :</strong> {{ pokemon.name }}<br/>
-<strong>Type :</strong> {{ pokemon.type }}<br/>
-<strong>Height :</strong> {{ pokemon.height }}<br/>
-<strong>Weight :</strong> {{ pokemon.weight }}<br/><br/>
-<strong>{{ pokemon.title }}</strong><br/>
-{{ pokemon.desc }}
-{{/if}}
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<div id="container">
+  <div id="searchbar">
+    <form action="/" method="post">
+      <br>
+        <input type="text" name="input" placeholder="SEARCH!">
+        <br>
+        <input type="submit" value="Submit">
+      </form>
+  </div>
 
-<form action="/" method="post">
-    Pokemon name or id number:<br>
-    <input type="text" name="input" placeholder="54 or Mew">
-    <br>
-    <input type="submit" value="Submit">
-  </form>
+
+  <div id="form">
+          <div class="box">
+            <p>Name</p>
+            <strong id="name">{{ pokemon.name }}</strong><br/>
+          </div>
+          <div class="box">
+            <p>Type</p>
+            <strong id="type">{{ pokemon.type }}</strong><br/>
+          </div>
+          <div class="box">
+            <p>Height</p>
+            <strong id="height">{{ pokemon.height }}</strong><br/>
+          </div>
+          <div class="box">
+            <p>Weight</p>
+            <strong id="weight">{{ pokemon.weight }}</strong><br/><br/>
+          </div>
+  </div>
+</div>
+
+{{/if}}

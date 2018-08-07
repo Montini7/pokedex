@@ -21,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/Montini7/pokedex/issues"
   },
-  "homepage": "https://github.com/Montini7/pokedex#readme"
+  "homepage": "https://github.com/Montini7/pokedex#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "index": "^0.4.0",
+    "request": "^2.87.0"
+  }
 }
