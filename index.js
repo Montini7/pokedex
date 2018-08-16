@@ -60,7 +60,7 @@ function getPokemonData(input, res) {
    request('http://pokeapi.co/api/v2/pokemon/' + input, function(err, results) {
          // Handling an invalid pokemon API call
          if (err || results.statusCode === 404) {
-            var err = err || "Pokemon not found",
+            var err = err || "Pokemon niet gevonden",
                 pokemon = { img: defaultImg };
 
             res.render('pokedexInfo', {err: err, pokemon: pokemon});
@@ -77,7 +77,7 @@ function getSpeciesData(input, pokemon, res) {
    var pokemonObj = pokemon;
    request('http://pokeapi.co/api/v2/pokemon-species/' + input, function(err, results) {
          if (err || results.statusCode === 404) {
-            var err = err || "Pokemon not found",
+            var err = err || "Pokemon niet gevonden",
                 pokemon = { img: defaultImg };
 
             res.render('pokedexInfo', {err: err, pokemon: pokemon});

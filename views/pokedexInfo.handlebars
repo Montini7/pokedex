@@ -1,36 +1,30 @@
 {{#if err}}
-  <h1>Oh noes!: {{err}} </h1>
+  <h1> {{err}} </h1>
 {{else}}
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 <div id="container">
+  <div class="pokemon"><i></i></div>
   <div id="searchbar">
     <form action="/" method="post">
       <br>
-        <input type="text" name="input" placeholder="SEARCH!">
+        <input type="text" name="input" placeholder="  naam of nummer van pokemon">
+         <i class="fas fa-search"></i>
         <br>
-        <input type="submit" value="Submit">
       </form>
   </div>
 
-
   <div id="form">
-          <div class="box">
-            <p>Name</p>
-            <strong id="name">{{ pokemon.name }}</strong><br/>
-          </div>
-          <div class="box">
-            <p>Type</p>
-            <strong id="type">{{ pokemon.type }}</strong><br/>
-          </div>
-          <div class="box">
-            <p>Height</p>
-            <strong id="height">{{ pokemon.height }}</strong><br/>
-          </div>
-          <div class="box">
-            <p>Weight</p>
-            <strong id="weight">{{ pokemon.weight }}</strong><br/><br/>
-          </div>
+
+
+            <p><strong id="name"> Name: {{ pokemon.name }}</strong></p>
+            <p><strong id="type">Type: {{ pokemon.type }}</strong></p>
+            <p><strong id="height">Height: {{ pokemon.height }}</strong></p>
+            <p><strong id="weight">Weight: {{ pokemon.weight }}</strong></p>
+            <p><strong id="weight">Weakness: {{ pokemon.weight }}</strong></p>
+
   </div>
+  <div class="box">{{pokemon.desc}}<i></i></div>
 </div>
 
 {{/if}}
