@@ -9,7 +9,6 @@ var bodyParser = require('body-parser');	  // grab incoming POST request input
 var exphbs 	   = require('express-handlebars')  // setup for our views
 
 var port = process.env.PORT || 8080;        // set our port
-
 // tell express what template engine we want to use and where to find the default
 app.engine('handlebars', exphbs({defaultLayout: 'index'}));
 app.set('view engine', 'handlebars');
@@ -101,14 +100,78 @@ function createPokemon(results) {
    pokemon.height = results.height || '';
    pokemon.weight = results.weight || '';
    pokemon.type = results.types[0].type.name || '';
-   pokemon.img = keys.length &&
-      (results.sprites[keys[random]] !== null || results.sprites[keys[random]] !== undefined) ?
-         results.sprites[keys[random]] : defaultImg;
-
+  pokemon.weakness = detectPokemonWeakness(pokemon.type);
    return pokemon;
 };
 
+function detectPokemonWeakness(pokemonType){
 
+var weakness = "";
+
+switch (pokemonType) {
+  case "normal":
+      weakness = "rock";
+      break;
+
+    case "water":
+        weakness = "grass";
+        break;
+
+    case "fighting":
+        weakness = "flying";
+        break;
+    case "flying":
+        weakness = "rock";
+        break;
+    case "poison":
+        weakness = "ground";
+        break;
+    case "ground":
+        weakness = "flying";
+        break;
+    case "rock":
+        weakness = "fighting";
+          break;
+    case "bug":
+            weakness = "fighting";
+              break;
+    case "ghost":
+                weakness = "normal";
+                  break;
+    case "steel":
+        weakness = "fire";
+          break;
+    case "fire":
+        weakness = "rock";
+          break;
+    case "grass":
+        weakness = "flying";
+          break;
+    case "electric":
+        weakness = "ground";
+          break;
+    case "psychic":
+        weakness = "steel";
+          break;
+    case "ice":
+        weakness = "steel";
+          break;
+    case "dragon":
+        weakness = "steel";
+          break;
+    case "fairy":
+        weakness = "poison";
+          break;
+    case "dark":
+        weakness = "fighting";
+          break;
+    default:
+      weakness = "test";
+        break;
+}
+
+return weakness
+}
 // START THE SERVER
 // =============================================================================
 app.listen(port);

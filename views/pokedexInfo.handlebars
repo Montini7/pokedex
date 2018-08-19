@@ -8,7 +8,7 @@
   <div id="searchbar">
     <form action="/" method="post">
       <br>
-        <input type="text" name="input" placeholder="  naam of nummer van pokemon">
+        <input required type="text" name="input" placeholder="  naam of nummer van pokemon">
          <i class="fas fa-search"></i>
         <br>
       </form>
@@ -21,10 +21,17 @@
             <p><strong id="type">Type: {{ pokemon.type }}</strong></p>
             <p><strong id="height">Height: {{ pokemon.height }}</strong></p>
             <p><strong id="weight">Weight: {{ pokemon.weight }}</strong></p>
-            <p><strong id="weight">Weakness: {{ pokemon.weight }}</strong></p>
+            <p><strong id="weight">Weakness: {{ pokemon.weakness }}</strong></p>
+          
 
   </div>
-  <div class="box">{{pokemon.desc}}<i></i></div>
+  <div class="color-controls">
+	<p>
+	<div class="box">{{pokemon.desc}}<i></i></div>
+	</p>
+
+</div>
+
 </div>
 
 {{/if}}
