@@ -8,29 +8,27 @@
   <div id="searchbar">
     <form action="/" method="post">
       <br>
-        <input required type="text" name="input" placeholder="  naam of nummer van pokemon">
-         <i class="fas fa-search"></i>
+        <input required type="text" name="input" placeholder="naam of nummer van pokemon">
+
         <br>
       </form>
   </div>
 
   <div id="form">
 
-
+    <div id="picture">
+           <img src= {{ pokemon.img }} />
+         </div>
             <p><strong id="name"> Name: {{ pokemon.name }}</strong></p>
             <p><strong id="type">Type: {{ pokemon.type }}</strong></p>
             <p><strong id="height">Height: {{ pokemon.height }}</strong></p>
-            <p><strong id="weight">Weight: {{ pokemon.weight }}</strong></p>
-            <p><strong id="weight">Weakness: {{ pokemon.weakness }}</strong></p>
-          
+            <p><strong id="weight">Weight: {{ pokemon.weight }}lbs</strong></p>
+            <p><strong id="weakness">Weakness: {{ pokemon.weakness }}</strong></p>
+
 
   </div>
-  <div class="color-controls">
-	<p>
-	<div class="box">{{pokemon.desc}}<i></i></div>
-	</p>
 
-</div>
+
 
 </div>
 

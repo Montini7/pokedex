@@ -32,7 +32,7 @@ var defaultPokemon = {
       name: 'Psyduck',
       img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/200653/psykokwak.gif',
       title: 'the duck pokemon',
-      desc: 'Uses mysterious powers to perform various attacks.'
+      weakness: 'grass'
    },
    defaultImg = 'https://media.giphy.com/media/JukJD3YfnXPkA/giphy.gif';
 
@@ -101,6 +101,9 @@ function createPokemon(results) {
    pokemon.weight = results.weight || '';
    pokemon.type = results.types[0].type.name || '';
   pokemon.weakness = detectPokemonWeakness(pokemon.type);
+  pokemon.img = keys.length &&
+     (results.sprites[keys[random]] !== null || results.sprites[keys[random]] !== undefined) ?
+        results.sprites[keys[random]] : defaultImg;
    return pokemon;
 };
 
